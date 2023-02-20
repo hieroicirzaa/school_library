@@ -3,10 +3,14 @@ const app = express()
 const PORT = 8000
 const bodyParser = require('body-parser')
 const cors = require(`cors`)
+const auth = require(`./routes/auth.routes`)
+
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 //app.use(express.static(__dirname))
+app.use(`/auth`, auth)
+
 
 const memberRoute = require(`./routes/member.routes`)
 app.use(`/member`, memberRoute)

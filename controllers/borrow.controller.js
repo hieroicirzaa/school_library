@@ -189,11 +189,19 @@ exports.getBorrow = async (request, response) => {
 /** create function for get filter borrow data id admin and id member */
 exports.filterBorrow = async (request, response) => {
   let keyword = request.body.keyword
+
+  if(keyword == "false"){
+    keyword = 0
+  }else if(keyword == "true"){
+    keyword = 1
+  }
+  
   let data = await borrowModel.findAll( {
     where: {
       [Op.or]: [
         { adminID: { [Op.substring]: keyword } },
-        { memberID: { [Op.substring]: keyword } }
+        { memberID: { [Op.substring]: keyword } },
+        { status: { [Op.substring]: keyword } }
       ]
     }, 
       include: [
