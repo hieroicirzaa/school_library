@@ -97,6 +97,7 @@ exports.updateMember = (request, response) => {
           .then(result => {
               return response.json({
                   success: true,
+                  data: member,
                   message: `Data member has been updated`
               })
           })

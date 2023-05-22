@@ -1,0 +1,776 @@
+{
+	"info": {
+		"_postman_id": "a697a525-467c-4014-8118-683258ab2936",
+		"name": "school library collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21087214"
+	},
+	"item": [
+		{
+			"name": "Member",
+			"item": [
+				{
+					"name": "Add Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYsIm5hbWUiOiJoYWlkYXIiLCJnZW5kZXIiOiJNYWxlIiwiY29udGFjdCI6IjA4MjIiLCJhZGRyZXNzIjoibWFsYW5nIiwicHJvZmlsZSI6InByb2ZpbGUtMTY3Njg3NjE2NTczNS5qcGVnIiwiY3JlYXRlZEF0IjoiMjAyMy0wMi0yMFQwNjo1NjowNS4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMy0wMi0yMFQwNjo1NjowNS4wMDBaIn0.KDJsyIZAosqckpINmBWSh7zqZYJ6a_mhluEG2baKAKU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "petir",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "kediri",
+									"type": "text"
+								},
+								{
+									"key": "contact",
+									"value": "0822789",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "text"
+								},
+								{
+									"key": "profile",
+									"type": "file",
+									"src": "/C:/Users/irzad/OneDrive/Pictures/Saved Pictures/Me/bromo.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/member/addMember",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"member",
+								"addMember"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "keyword",
+									"value": "cid",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/member/find",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"member",
+								"find"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Member",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/member/getAllMember",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"member",
+								"getAllMember"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Member",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/member/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"member",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Member",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "irzed",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "jambar",
+									"type": "text"
+								},
+								{
+									"key": "contact",
+									"value": "0852",
+									"type": "text"
+								},
+								{
+									"key": "profile",
+									"type": "file",
+									"src": "/C:/Users/irzad/OneDrive/Pictures/Saved Pictures/Me/bg sekolah.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/member/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"member",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Add Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "isbn",
+									"value": "00222",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Bubbeeko",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "cid moke",
+									"type": "text"
+								},
+								{
+									"key": "publisher",
+									"value": "vuja",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Bukubaa",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "111",
+									"type": "text"
+								},
+								{
+									"key": "cover",
+									"type": "file",
+									"src": "/C:/Users/irzad/OneDrive/Pictures/Saved Pictures/Me/bromo.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/book/addBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"book",
+								"addBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "keyword",
+									"value": "irja",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/book/find",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"book",
+								"find"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/book/getAllBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"book",
+								"getAllBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/book/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"book",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.warn\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "isbn",
+									"value": "1009",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "georgeo",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "ahmed",
+									"type": "text"
+								},
+								{
+									"key": "publisher",
+									"value": "dzaky",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "kartun",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "111",
+									"type": "text"
+								},
+								{
+									"key": "cover",
+									"type": "file",
+									"src": "/C:/Users/irzad/OneDrive/Pictures/Saved Pictures/Me/Logo Moklet Warna Atas Bawah.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/book/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"book",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Add Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "racid",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "jember",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "contact",
+									"value": "0852",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "hieroic",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/admin/addAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"admin",
+								"addAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "keyword",
+									"value": "jember",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/admin/find",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"admin",
+								"find"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/admin/getAllAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"admin",
+								"getAllAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/admin/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"admin",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Admin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "rasyid",
+									"type": "text"
+								},
+								{
+									"key": "contact",
+									"value": "099",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "sidoarjo",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "cid",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "799",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/admin/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"admin",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Borrowed",
+			"item": [
+				{
+					"name": "Add borrow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"memberID\":1,\r\n \"adminID\":1,\r\n \"date_of_borrow\":\"2022-05-05\",\r\n \"date_of_return\":null,\r\n \"status\":false,\r\n \"details_of_borrow\":[\r\n { \"bookID\": 1, \"qty\": 2}\r\n ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/borrow/addBorrow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"borrow",
+								"addBorrow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fillterBorrow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "keyword",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/borrow/filterBorrow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"borrow",
+								"filterBorrow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Borrow",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/borrow/getBorrow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"borrow",
+								"getBorrow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return Borrow",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/borrow/return/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"borrow",
+								"return",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Borrow",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/borrow/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"borrow",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Borrow",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"memberID\":9,\r\n \"adminID\":1,\r\n \"date_of_borrow\":\"2022-05-05\",\r\n \"date_of_return\":null,\r\n \"status\":false,\r\n \"details_of_borrow\":[\r\n { \"bookID\": 1, \"qty\": 111}\r\n ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/borrow/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"borrow",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hieroic\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

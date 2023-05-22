@@ -1,31 +1,38 @@
-const Joi = require(`joi`)
+const { check, validationResult } = require('express-validator');
 
-const validateMember = (request, response, next) => {
+const rules = [
+  check('name')
+    .notEmpty().withMessage('name cannot be empty')
+    .isString().withMessage('name must be a string')
+    .trim()
+    .escape(),
 
-  const rules = Joi
-    .object()
-    .keys({
-      name: Joi.string().required(),
-      address: Joi.string().required(),
-      contact: Joi.number().required(),
-      gender: Joi.string().valid(`Male`, `Female`),
-     
-    })
-    .options({ abortEarly: false })
+  check('gender')
+    .optional()
+    .isIn(['Male', 'Female']),
 
-  let { error } = rules.validate(request.body)
+  check('contact')
+    .notEmpty().withMessage('contact cannot be empty')
+    .isNumeric().withMessage('contact must be a number'),
 
-  if (error != null) {
+  check('address')
+    .notEmpty().withMessage('address cannot be empty')
+    .trim()
+    .escape(),
+];
 
-    let errMessage = error.details.map(it =>
-      it.message).join(",")
+const validationMember = [
+  //rules
+  rules,
+  //Response
+  (req, res, next) => {
+    const errors = validationResult(req);
 
-    return response.status(422).json({
-      success: false,
-      message: errMessage
-    })
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+    next();
   }
+];
 
-  next()
-}
-module.exports = { validateMember }
+module.exports = validationMember;
